@@ -25,7 +25,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
           <Image
-            src="/devhulon-logo-new.jpg"
+            src="/342ecdd9-c814-4f9c-a7a0-47ce12de4fc7.jpeg"
             alt="Devhulon Business & People Solutions"
             width={240}
             height={60}

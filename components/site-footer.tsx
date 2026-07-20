@@ -50,7 +50,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-2 sm:gap-3">
             <Image
-              src="/devhulon-logo-full.jpeg"
+              src="/d1d9e351-cc80-4778-ba16-dc352f4974be.jpeg"
               alt="Devhulon logo"
               width={44}
               height={44}
