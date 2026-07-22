@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Phone, Mail, MapPin } from 'lucide-react'
+import { FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa'
 import { PageHero } from '@/components/page-hero'
 import { ContactForm } from '@/components/contact-form'
 
@@ -27,6 +28,24 @@ const details = [
     icon: MapPin,
     label: 'Locations',
     value: 'Thohoyandou, Limpopo & Gauteng',
+  },
+]
+
+const socialLinks = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/92842789/',
+    icon: FaLinkedin,
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/Devhulon',
+    icon: FaFacebook,
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/devhulon/',
+    icon: FaInstagram,
   },
 ]
 
@@ -71,6 +90,23 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
+            <div className="mt-8">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">Follow Us</p>
+              <div className="mt-4 flex items-center gap-3">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-green/10 text-green transition-colors hover:bg-green hover:text-white"
+                  >
+                    <link.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
 
             <div className="mt-10 rounded-2xl border border-border bg-secondary p-6">
               <div className="flex items-center gap-6">

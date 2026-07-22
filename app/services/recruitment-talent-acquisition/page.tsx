@@ -1,11 +1,28 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { FAQSection } from '@/components/faq-section'
+import { TestimonialsSection } from '@/components/testimonials-section'
+import { ContactDetails } from '@/components/contact-details'
+import { JsonLd } from '@/components/json-ld'
+import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
+import { recruitmentFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Recruitment & Talent Acquisition | Devhulon Business & People Solutions',
+  title: 'Recruitment & Talent Acquisition Services | Devhulon | Find Top Talent',
   description:
-    'Devhulon Recruitment & Talent Acquisition helps businesses attract, identify, and recruit professionals who align with their goals, culture, and long-term success.',
+    'Professional recruitment and talent acquisition services including permanent, temporary, and executive recruitment. Find the right candidates for your business.',
+  keywords: [
+    'recruitment services',
+    'talent acquisition',
+    'permanent recruitment',
+    'executive search',
+    'candidate screening',
+    'recruitment agency',
+    'hiring',
+    'South Africa',
+  ],
 }
 
 const serviceList = [
@@ -62,6 +79,23 @@ const subsection = (
 export default function RecruitmentPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            serviceSchema(
+              services.find((service) => service.slug === 'recruitment-talent-acquisition')!,
+              `${siteUrl}/services/recruitment-talent-acquisition`
+            ),
+            breadcrumbSchema([
+              { name: 'Home', url: siteUrl },
+              { name: 'Services', url: `${siteUrl}/services` },
+              { name: 'Recruitment & Talent Acquisition', url: `${siteUrl}/services/recruitment-talent-acquisition` },
+            ]),
+          ],
+        }}
+        id="service-recruitment-talent-acquisition-jsonld"
+      />
       <PageHero
         eyebrow="Recruitment & Talent Acquisition"
         title="Finding The Right Talent For Your Business"
@@ -255,6 +289,35 @@ export default function RecruitmentPage() {
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <TestimonialsSection testimonials={testimonials} />
+
+      <FAQSection faqs={recruitmentFAQs} />
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-secondary p-8 sm:p-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Ready to Find Your Next Great Team Member?
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Let's discuss your recruitment needs and find the right people for your business.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-green px-6 py-3 text-sm font-semibold text-green-foreground transition-colors hover:bg-green/90"
+              >
+                Start Your Recruitment
+              </Link>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-navy mb-4">Get in Touch</h3>
+              <ContactDetails compact showForm />
+            </div>
+          </div>
         </div>
       </section>
 

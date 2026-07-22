@@ -1,11 +1,29 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { FAQSection } from '@/components/faq-section'
+import { TestimonialsSection } from '@/components/testimonials-section'
+import { ContactDetails } from '@/components/contact-details'
+import { JsonLd } from '@/components/json-ld'
+import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
+import { digitalSolutionsFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Digital Solutions | Devhulon Business & People Solutions',
+  title: 'Digital Solutions Services | Devhulon | Web Design & Branding',
   description:
-    'Devhulon Digital Solutions helps businesses build a professional online presence, improve customer engagement, and leverage practical technology for growth.',
+    'Digital solutions including website development, logo design, branding, Google Business Profile, and social media setup. Build your online presence.',
+  keywords: [
+    'digital solutions',
+    'website development',
+    'logo design',
+    'branding',
+    'Google Business Profile',
+    'social media setup',
+    'web design',
+    'online presence',
+    'South Africa',
+  ],
 }
 
 const subsection = (
@@ -52,6 +70,23 @@ const subsection = (
 export default function DigitalSolutionsPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            serviceSchema(
+              services.find((service) => service.slug === 'digital-solutions')!,
+              `${siteUrl}/services/digital-solutions`
+            ),
+            breadcrumbSchema([
+              { name: 'Home', url: siteUrl },
+              { name: 'Services', url: `${siteUrl}/services` },
+              { name: 'Digital Solutions', url: `${siteUrl}/services/digital-solutions` },
+            ]),
+          ],
+        }}
+        id="service-digital-solutions-jsonld"
+      />
       <PageHero
         eyebrow="Digital Solutions"
         title="Empowering Businesses Through Technology"
@@ -285,6 +320,35 @@ export default function DigitalSolutionsPage() {
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <TestimonialsSection testimonials={testimonials} />
+
+      <FAQSection faqs={digitalSolutionsFAQs} />
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-secondary p-8 sm:p-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Ready to Strengthen Your Digital Presence?
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Let's build digital solutions that help your business grow online.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-green px-6 py-3 text-sm font-semibold text-green-foreground transition-colors hover:bg-green/90"
+              >
+                Start Your Digital Project
+              </Link>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-navy mb-4">Get in Touch</h3>
+              <ContactDetails compact showForm />
+            </div>
+          </div>
         </div>
       </section>
 

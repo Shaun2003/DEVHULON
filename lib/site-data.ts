@@ -148,3 +148,252 @@ export const approach = [
   { step: '05', title: 'Support', text: 'We provide ongoing support to ensure success.' },
   { step: '06', title: 'Improve', text: 'We measure results and continuously refine for growth.' },
 ]
+
+export const businessConsultingFAQs = [
+  {
+    question: 'How can business consulting help my organisation?',
+    answer:
+      'Our business consulting services help you develop clear strategies, improve operations, and identify growth opportunities. We work with you to streamline processes, enhance efficiency, and build a sustainable competitive advantage.',
+  },
+  {
+    question: 'What is your typical engagement process?',
+    answer:
+      'We follow a structured approach: Discovery (understanding your business), Evaluation (assessing your position), Design (creating solutions), Implementation (executing plans), Support (ongoing guidance), and Improvement (measuring and refining results).',
+  },
+  {
+    question: 'How long does a consulting engagement typically take?',
+    answer:
+      'Engagement duration depends on the scope of work and complexity of your challenges. Some projects take 3-6 months, while others may extend longer. We discuss timelines and milestones during the initial consultation.',
+  },
+  {
+    question: 'Can you help with business planning and financial projections?',
+    answer:
+      'Yes. We develop comprehensive business plans, financial models, and growth strategies tailored to your industry and goals. Our plans are investor-ready and operationally sound.',
+  },
+  {
+    question: 'Do you work with SMEs or only large corporations?',
+    answer:
+      'We work with businesses of all sizes—from small enterprises to large corporations. We tailor our approach and pricing to suit your organisational scale and budget.',
+  },
+]
+
+export const humanCapitalFAQs = [
+  {
+    question: 'What HR services do you offer?',
+    answer:
+      'We provide comprehensive HR consulting, including HR policy development, performance management systems, employment relations support, compliance audits, and organisational development initiatives.',
+  },
+  {
+    question: 'How can HR consulting improve our employee retention?',
+    answer:
+      'By developing clear HR strategies, competitive compensation structures, career development paths, and positive workplace cultures. We help you create an environment where people want to stay and grow.',
+  },
+  {
+    question: 'Are your HR policies compliant with South African labour law?',
+    answer:
+      'Yes. All our HR policies and procedures are developed in compliance with South African labour legislation, including the Labour Relations Act, Employment Equity Act, and Basic Conditions of Employment Act.',
+  },
+  {
+    question: 'Can you help with employee performance management?',
+    answer:
+      'Absolutely. We design customised performance management systems, train managers on effective feedback, and help establish clear KPIs and development plans for employees.',
+  },
+  {
+    question: 'Do you offer organisational development services?',
+    answer:
+      'Yes. We help organisations transform through change management, culture development, team building, and alignment of strategy with people practices.',
+  },
+]
+
+export const recruitmentFAQs = [
+  {
+    question: 'How do you ensure you find the right candidates for our roles?',
+    answer:
+      'We conduct thorough needs analysis, develop detailed candidate profiles, use multiple sourcing channels, perform rigorous screening, and conduct structured interviews. This ensures candidates match both role requirements and company culture.',
+  },
+  {
+    question: 'What is your average time to fill a position?',
+    answer:
+      'Most positions are filled within 2-4 weeks depending on role level and availability of candidates. Executive search roles may take longer but prioritise finding the right fit.',
+  },
+  {
+    question: 'Do you offer temporary or contract recruitment services?',
+    answer:
+      'Yes. We provide both permanent and temporary recruitment solutions, as well as contract and executive search services tailored to your business needs.',
+  },
+  {
+    question: 'Can you help with interview preparation and support?',
+    answer:
+      'Absolutely. We provide interview skills training for hiring teams, conduct structured interviews, assess candidates thoroughly, and provide objective recommendations.',
+  },
+  {
+    question: 'What is included in your reference check process?',
+    answer:
+      'We conduct comprehensive reference checks including employment verification, performance assessments, and background checks to ensure candidate credibility and suitability.',
+  },
+]
+
+export const trainingFAQs = [
+  {
+    question: 'What types of training programmes do you offer?',
+    answer:
+      'We offer skills development, leadership training, compliance training, workplace skills programmes, and customised training solutions tailored to your organisational needs.',
+  },
+  {
+    question: 'Are your training programmes accredited?',
+    answer:
+      'Many of our programmes follow accredited frameworks and standards. We discuss accreditation requirements during the training needs analysis and can accommodate specific certification needs.',
+  },
+  {
+    question: 'Can training be conducted on-site or online?',
+    answer:
+      'Yes. We deliver training through multiple formats including on-site workshops, online sessions, blended learning, and self-paced modules to suit your preference and operational needs.',
+  },
+  {
+    question: 'How do you measure the impact of training?',
+    answer:
+      'We use multiple evaluation methods including post-training assessments, feedback surveys, skills tests, and long-term performance tracking to measure training effectiveness and ROI.',
+  },
+  {
+    question: 'Do you provide train-the-trainer services?',
+    answer:
+      'Yes. We can train internal trainers to deliver programmes independently, building capability within your organisation and ensuring sustainability of training initiatives.',
+  },
+]
+
+export const payrollFAQs = [
+  {
+    question: 'What payroll compliance issues should I be aware of?',
+    answer:
+      'Key compliance areas include PAYE deductions, UIF, Workmen\'s Compensation, tax reconciliation, and accurate record keeping. We ensure your payroll meets all statutory requirements.',
+  },
+  {
+    question: 'How do you handle leave management and accruals?',
+    answer:
+      'We manage leave calculations, accruals, tracking, and ensure compliance with minimum leave requirements. We also advise on leave policies aligned with your industry.',
+  },
+  {
+    question: 'Can you help with payroll audits and compliance reviews?',
+    answer:
+      'Yes. We conduct comprehensive payroll audits, identify compliance gaps, and implement corrective measures to ensure your payroll processes meet all statutory requirements.',
+  },
+  {
+    question: 'Do you provide payroll reports and analytics?',
+    answer:
+      'Absolutely. We provide detailed payroll reports, cost analysis, staffing insights, and dashboards that help you make informed decisions about compensation.',
+  },
+  {
+    question: 'How do you ensure data security for payroll information?',
+    answer:
+      'We implement strict data security protocols, secure storage systems, limited access controls, and compliance with POPIA regulations to protect sensitive employee and financial data.',
+  },
+]
+
+export const digitalSolutionsFAQs = [
+  {
+    question: 'What digital services does Devhulon provide?',
+    answer:
+      'We offer website development, logo design and branding, business email setup, Google Business Profile optimization, and social media setup to strengthen your digital presence.',
+  },
+  {
+    question: 'How long does website development take?',
+    answer:
+      'Typically 4-8 weeks depending on complexity, features, and number of pages. We provide regular updates and involve you throughout the development process.',
+  },
+  {
+    question: 'Is your website design mobile-friendly?',
+    answer:
+      'Yes. All our websites are fully responsive and optimised for desktop, tablet, and mobile devices. We test thoroughly to ensure excellent user experience across all platforms.',
+  },
+  {
+    question: 'Do you offer SEO services with website development?',
+    answer:
+      'We build SEO best practices into every website including proper structure, meta tags, performance optimization, and mobile responsiveness. We can also discuss extended SEO and content marketing services.',
+  },
+  {
+    question: 'Can you help with Google Business Profile and social media setup?',
+    answer:
+      'Yes. We help you create and optimise your Google Business Profile, set up social media accounts, and provide guidance on maintaining an active social media presence.',
+  },
+]
+
+export const testimonials = [
+  {
+    quote:
+      'Devhulon has been instrumental in transforming our HR department. Their strategic guidance and practical solutions have significantly improved our employee retention and workplace culture.',
+    author: 'Thabo Mkhize',
+    title: 'HR Manager',
+    company: 'Manufacturing Company',
+    rating: 5,
+  },
+  {
+    quote:
+      'The recruitment services provided by Devhulon are exceptional. They understand our industry and consistently provide high-quality candidates that are the right fit for our team.',
+    author: 'Sarah Johnson',
+    title: 'Operations Director',
+    company: 'Professional Services Firm',
+    rating: 5,
+  },
+  {
+    quote:
+      'Working with Devhulon on our business strategy was exactly what we needed. Their insights helped us identify growth opportunities and streamline our operations.',
+    author: 'Mohsin Patel',
+    title: 'Business Owner',
+    company: 'Tech Startup',
+    rating: 5,
+  },
+]
+
+export type BlogPost = {
+  slug: string
+  title: string
+  excerpt: string
+  content: string
+  author: string
+  category: string
+  date: string
+  image?: string
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: 'building-high-performance-teams',
+    title: 'Building High-Performance Teams: The People Factor',
+    excerpt:
+      'Discover how investing in your people through proper HR strategy, development, and culture creates high-performing teams that drive business results.',
+    content: `Great businesses are built by great teams. Yet many organisations struggle to attract, develop, and retain the talent they need to succeed. The difference between ordinary and high-performing teams often comes down to one critical factor: how well the organisation invests in its people.\n\nAt Devhulon, we believe that people are a business's greatest asset. When you invest in your people through thoughtful HR strategy, ongoing development, and a positive workplace culture, you create the foundation for sustainable success.\n\n## What Makes Teams High-Performing?\n\nHigh-performing teams share common characteristics:\n- Clear goals and accountability\n- Skilled and engaged employees\n- Strong leadership and support\n- Open communication and collaboration\n- Continuous learning and development\n- Recognition and reward systems\n\n## How HR Strategy Drives Performance\n\nStrategic HR goes beyond compliance. It's about:\n- Aligning people practices with business objectives\n- Creating career development pathways\n- Building inclusive, supportive cultures\n- Recognizing and rewarding excellence\n- Providing the tools and support employees need to succeed\n\n## The ROI of Investing in People\n\nWhen you invest in your people, you see:\n- Higher employee retention\n- Improved productivity and performance\n- Better customer satisfaction\n- Stronger organisational resilience\n- Competitive advantage in your market\n\nLet Devhulon help you build a high-performing team. Contact us today to discuss your people strategy.`,
+    author: 'Devhulon Consulting',
+    category: 'HR Strategy',
+    date: '2024-01-15',
+  },
+  {
+    slug: 'navigating-south-african-employment-law',
+    title: 'Navigating South African Employment Law: Key Compliance Requirements',
+    excerpt:
+      'Understanding South African labour legislation is essential for employers. Learn about key compliance requirements and how to avoid costly legal issues.',
+    content: `South African employment law is comprehensive and designed to protect both employers and employees. However, staying compliant can be challenging. This guide covers key compliance requirements every employer should understand.\n\n## Key Pieces of South African Labour Legislation\n\n**The Labour Relations Act (LRA)**\nGoverns employment relationships, dispute resolution, and organisational rights. Key aspects include:\n- Unfair dismissal and reinstatement\n- Disciplinary procedures\n- Collective bargaining\n- Strike action and lockouts\n\n**The Basic Conditions of Employment Act (BCEA)**\nSets minimum employment standards:\n- Maximum working hours\n- Leave entitlements\n- Wages and deductions\n- Termination procedures\n\n**The Employment Equity Act (EEA)**\nPromotes workplace equality:\n- Equal opportunity and fair treatment\n- Affirmative action measures\n- Reporting requirements\n- Penalties for non-compliance\n\n## Critical Compliance Areas\n\n1. **Employment Contracts**: Must be fair, clear, and include key terms\n2. **Disciplinary Procedures**: Must be fair and follow due process\n3. **Leave Management**: Must comply with minimum leave entitlements\n4. **Payroll Deductions**: Only permitted deductions may be made\n5. **Employment Equity**: Reports must be filed as required\n\n## Common Compliance Mistakes\n\n- Unfair disciplinary procedures leading to costly disputes\n- Incorrect leave calculations\n- Missing statutory payroll deductions\n- Poor employment contracts\n- Inadequate record keeping\n\n## How to Stay Compliant\n\n- Maintain clear, documented HR policies\n- Ensure proper training for managers and HR staff\n- Keep accurate employment records\n- Conduct regular compliance audits\n- Seek professional advice when unsure\n\nCompliance isn't just about avoiding penalties—it's about creating a fair, respectful workplace. Contact Devhulon to ensure your organisation meets all compliance requirements.`,
+    author: 'Devhulon Consulting',
+    category: 'Compliance',
+    date: '2024-01-10',
+  },
+  {
+    slug: 'effective-recruitment-strategy',
+    title: 'Effective Recruitment Strategy: Finding and Hiring Top Talent',
+    excerpt:
+      'Discover how to build an effective recruitment strategy that attracts top talent, reduces hiring costs, and improves retention.',
+    content: `In today's competitive job market, finding and hiring the right talent is more important than ever. Poor hiring decisions can be costly and disruptive. A strategic, systematic approach to recruitment makes all the difference.\n\n## The Recruitment Challenge\n\nMany organisations struggle with recruitment because they:\n- Lack a clear hiring strategy\n- Don't define roles clearly\n- Use limited sourcing channels\n- Have poor selection processes\n- Make hiring decisions too quickly\n- Fail to retain new hires\n\n## Building an Effective Recruitment Strategy\n\n### 1. Define Clear Role Requirements\n- Detailed job descriptions\n- Clear competency requirements\n- Realistic expectations\n- Alignment with business needs\n\n### 2. Use Multiple Sourcing Channels\n- Online job boards\n- Professional networks\n- Recruitment agencies\n- Employee referrals\n- Social media\n- Direct recruitment\n\n### 3. Implement Structured Selection\n- Screening and shortlisting\n- Competency-based interviews\n- Skills assessments\n- Reference checks\n- Background verification\n\n### 4. Focus on Fit and Culture\n- Assess technical skills\n- Evaluate cultural fit\n- Consider team dynamics\n- Ensure value alignment\n\n### 5. Optimize Onboarding\n- Structured induction\n- Mentoring and support\n- Clear expectations\n- Regular check-ins\n\n## The Benefits of Strategic Recruitment\n\n- Higher quality hires\n- Reduced turnover\n- Faster time to productivity\n- Better team dynamics\n- Lower recruitment costs\n- Improved employer brand\n\n## Making It Work\n\nEffective recruitment requires:\n- Investment in processes\n- Skilled interviewers and assessors\n- Clear documentation\n- Continuous improvement\n- Professional support when needed\n\nLet Devhulon help you build a recruitment strategy that attracts and retains top talent. Contact us today.`,
+    author: 'Devhulon Consulting',
+    category: 'Recruitment',
+    date: '2024-01-05',
+  },
+  {
+    slug: 'digital-transformation-for-smes',
+    title: 'Digital Transformation for SMEs: Why Your Business Needs an Online Presence',
+    excerpt:
+      'Small businesses can compete effectively by building a strong online presence. Learn how digital transformation drives growth for SMEs.',
+    content: `In an increasingly digital world, small and medium-sized enterprises (SMEs) cannot afford to ignore digital transformation. A strong online presence is no longer optional—it's essential for business survival and growth.\n\n## Why Digital Presence Matters\n\n**Reach and Visibility**\n- Customers search online first\n- Credibility and legitimacy\n- Competitive advantage\n- Global reach\n\n**Customer Engagement**\n- Direct communication channels\n- Real-time customer service\n- Customer feedback and insights\n- Relationship building\n\n**Business Growth**\n- New sales channels\n- Reduced marketing costs\n- Better customer insights\n- Operational efficiency\n\n## Essential Digital Elements for SMEs\n\n**1. Professional Website**\n- Responsive design\n- Clear value proposition\n- SEO optimization\n- Mobile-friendly\n\n**2. Branding and Logo**\n- Professional image\n- Brand consistency\n- Trust and credibility\n- Market differentiation\n\n**3. Google Business Profile**\n- Local visibility\n- Customer reviews\n- Business information\n- Map presence\n\n**4. Social Media Presence**\n- Audience engagement\n- Brand awareness\n- Customer service\n- Community building\n\n**5. Email Marketing**\n- Customer communication\n- Newsletter updates\n- Promotional campaigns\n- Customer retention\n\n## Getting Started with Digital Transformation\n\n### Step 1: Assess Your Current State\n- What digital tools do you have?\n- Where are your customers?\n- What are competitors doing?\n- What are your goals?\n\n### Step 2: Develop a Digital Strategy\n- Define objectives\n- Identify channels\n- Create content plan\n- Set metrics\n\n### Step 3: Implement Solutions\n- Website development\n- Branding\n- Social media setup\n- Email marketing\n\n### Step 4: Monitor and Optimize\n- Track metrics\n- Gather feedback\n- Make improvements\n- Scale what works\n\n## The ROI of Digital Transformation\n\nSMEs that invest in digital transformation typically see:\n- 30-50% increase in customer reach\n- Higher customer engagement\n- Improved brand perception\n- Better customer data insights\n- More efficient operations\n- Increased sales\n\n## Start Your Digital Journey\n\nDigital transformation doesn't have to be complex or expensive. Start with the essentials and build from there. Devhulon can help you develop a digital strategy and build the online presence your business needs to grow. Contact us today to get started.`,
+    author: 'Devhulon Consulting',
+    category: 'Digital Solutions',
+    date: '2023-12-28',
+  },
+]

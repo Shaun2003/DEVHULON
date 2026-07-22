@@ -1,11 +1,28 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { FAQSection } from '@/components/faq-section'
+import { TestimonialsSection } from '@/components/testimonials-section'
+import { ContactDetails } from '@/components/contact-details'
+import { JsonLd } from '@/components/json-ld'
+import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
+import { payrollFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Payroll & HR Compliance | Devhulon Business & People Solutions',
+  title: 'Payroll & HR Compliance Services | Devhulon | Statutory Compliance',
   description:
-    'Devhulon Payroll & HR Compliance delivers accurate payroll processing, statutory compliance, and payroll advisory services for South African businesses.',
+    'Expert payroll administration and HR compliance services including PAYE processing, leave management, and statutory compliance. Stay compliant with South African labour laws.',
+  keywords: [
+    'payroll processing',
+    'HR compliance',
+    'statutory compliance',
+    'leave management',
+    'PAYE',
+    'payroll services',
+    'employment compliance',
+    'South Africa',
+  ],
 }
 
 const subsection = (
@@ -53,6 +70,23 @@ const subsection = (
 export default function PayrollHrCompliancePage() {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            serviceSchema(
+              services.find((service) => service.slug === 'payroll-hr-compliance')!,
+              `${siteUrl}/services/payroll-hr-compliance`
+            ),
+            breadcrumbSchema([
+              { name: 'Home', url: siteUrl },
+              { name: 'Services', url: `${siteUrl}/services` },
+              { name: 'Payroll & HR Compliance', url: `${siteUrl}/services/payroll-hr-compliance` },
+            ]),
+          ],
+        }}
+        id="service-payroll-hr-compliance-jsonld"
+      />
       <PageHero
         eyebrow="Payroll & HR Compliance"
         title="Reliable Payroll Solutions For Your Business"
@@ -271,6 +305,35 @@ export default function PayrollHrCompliancePage() {
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <TestimonialsSection testimonials={testimonials} />
+
+      <FAQSection faqs={payrollFAQs} />
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-secondary p-8 sm:p-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Need Reliable Payroll & Compliance Support?
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Let's ensure your payroll is accurate, timely, and fully compliant.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-green px-6 py-3 text-sm font-semibold text-green-foreground transition-colors hover:bg-green/90"
+              >
+                Get Payroll Support
+              </Link>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-navy mb-4">Get in Touch</h3>
+              <ContactDetails compact showForm />
+            </div>
+          </div>
         </div>
       </section>
 

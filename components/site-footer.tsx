@@ -1,14 +1,33 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail, MapPin } from 'lucide-react'
+import { FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa'
 
 const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Industries', href: '/industries' },
-  { label: 'Resources', href: '/resources' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
+]
+
+const socialLinks = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/92842789/',
+    icon: FaLinkedin,
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/Devhulon',
+    icon: FaFacebook,
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/devhulon/',
+    icon: FaInstagram,
+  },
 ]
 
 const services = [
@@ -131,9 +150,27 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-white/60 sm:flex-row sm:px-6 lg:px-8">
-          <p>&copy; {new Date().getFullYear()} Devhulon Business &amp; People Solutions. All rights reserved.</p>
-          <p>Building Businesses. Developing People. Driving Performance.</p>
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+            <div className="flex flex-col items-center gap-2 text-xs text-white/60 sm:items-start">
+              <p>&copy; {new Date().getFullYear()} Devhulon Business &amp; People Solutions. All rights reserved.</p>
+              <p>Building Businesses. Developing People. Driving Performance.</p>
+            </div>
+            <div className="flex items-center gap-4 sm:gap-6">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 transition-colors hover:text-primary"
+                  aria-label={link.label}
+                >
+                  <link.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </footer>

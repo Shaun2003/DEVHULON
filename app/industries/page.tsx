@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { ContactDetails } from '@/components/contact-details'
 
 export const metadata: Metadata = {
   title: 'Industries We Serve | Devhulon Business & People Solutions',
@@ -67,6 +68,26 @@ export default function IndustriesPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+          <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-green">
+                Need support in your sector?
+              </p>
+              <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Let us help you solve your industry challenges.
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Our team has experience across a wide range of industries and can tailor solutions to your
+                specific business need. Reach out for a consultation today.
+              </p>
+            </div>
+            <ContactDetails compact showForm />
+          </div>
         </div>
       </section>
 

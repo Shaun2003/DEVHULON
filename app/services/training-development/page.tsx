@@ -1,14 +1,31 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { FAQSection } from '@/components/faq-section'
+import { TestimonialsSection } from '@/components/testimonials-section'
+import { ContactDetails } from '@/components/contact-details'
+import { JsonLd } from '@/components/json-ld'
+import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
+import { services, trainingFAQs, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Training & Development | Devhulon Business & People Solutions',
+  title: 'Training & Development Services | Devhulon | Build Team Skills',
   description:
-    'Training & Development services from Devhulon help businesses identify skills gaps, develop employee capabilities, and implement practical development strategies for improved performance.',
+    'Professional training and development programmes including skills development, leadership training, and compliance training. Build capability across your organisation.',
+  keywords: [
+    'training and development',
+    'skills development',
+    'leadership training',
+    'compliance training',
+    'workplace training',
+    'employee development',
+    'training programmes',
+    'South Africa',
+  ],
 }
 
-const services = [
+const trainingServices = [
   'Training Needs Analysis',
   'Skills Development Planning',
   'Workplace Skills Plans (WSP)',
@@ -60,6 +77,23 @@ const subsection = (title: string, subtitle: string, description: string, list: 
 export default function TrainingDevelopmentPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            serviceSchema(
+              services.find((service) => service.slug === 'training-development')!,
+              `${siteUrl}/services/training-development`
+            ),
+            breadcrumbSchema([
+              { name: 'Home', url: siteUrl },
+              { name: 'Services', url: `${siteUrl}/services` },
+              { name: 'Training & Development', url: `${siteUrl}/services/training-development` },
+            ]),
+          ],
+        }}
+        id="service-training-development-jsonld"
+      />
       <PageHero
         eyebrow="Training & Development"
         title="Developing People. Strengthening Businesses."
@@ -76,7 +110,7 @@ export default function TrainingDevelopmentPage() {
               <div className="mt-8">
                 <h3 className="text-lg font-semibold text-navy">Our Training & Development Services</h3>
                 <ul className="mt-4 grid gap-3 sm:grid-cols-2 text-sm text-foreground/90">
-                  {services.map((item) => (
+                  {trainingServices.map((item) => (
                     <li key={item} className="rounded-2xl bg-[#F6FFF4] px-4 py-3">
                       {item}
                     </li>
@@ -333,6 +367,35 @@ export default function TrainingDevelopmentPage() {
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <TestimonialsSection testimonials={testimonials} />
+
+      <FAQSection faqs={trainingFAQs} />
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-secondary p-8 sm:p-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Ready to Develop Your Team?
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Let's design training programmes that build capability and drive performance.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-green px-6 py-3 text-sm font-semibold text-green-foreground transition-colors hover:bg-green/90"
+              >
+                Request Training Consultation
+              </Link>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-navy mb-4">Get in Touch</h3>
+              <ContactDetails compact showForm />
+            </div>
+          </div>
         </div>
       </section>
 

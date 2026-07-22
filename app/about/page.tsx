@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Eye, Target, Heart, Check } from 'lucide-react'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { ContactDetails } from '@/components/contact-details'
 import { approach, coreValues } from '@/lib/site-data'
 
 export const metadata: Metadata = {
@@ -47,6 +48,26 @@ export default function AboutPage() {
               height={520}
               className="h-full w-full object-cover"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+          <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-green">
+                Want to learn more?
+              </p>
+              <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Talk to our team about your business and people goals.
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                We can help you design practical strategies, improve employee performance, and build
+                stronger teams. Reach out today and let&apos;s discuss the next step.
+              </p>
+            </div>
+            <ContactDetails compact showForm />
           </div>
         </div>
       </section>

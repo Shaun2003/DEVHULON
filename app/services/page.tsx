@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Check } from 'lucide-react'
 import { PageHero } from '@/components/page-hero'
 import { ServicesGrid } from '@/components/services-grid'
+import { ContactDetails } from '@/components/contact-details'
 import { CtaSection } from '@/components/cta-section'
 import { industries, whyChoose } from '@/lib/site-data'
 
@@ -22,6 +23,26 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ServicesGrid showItems />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+          <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-green">
+                Talk to us about your next project.
+              </p>
+              <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Ready to make your next business move?
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Whether you need strategy, recruitment, training, payroll support or digital solutions,
+                our team is ready to help. Contact Devhulon today for a clear, practical plan.
+              </p>
+            </div>
+            <ContactDetails compact showForm />
+          </div>
+        </div>
       </section>
 
       <section className="bg-navy py-20">

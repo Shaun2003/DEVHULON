@@ -1,11 +1,28 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { FAQSection } from '@/components/faq-section'
+import { TestimonialsSection } from '@/components/testimonials-section'
+import { ContactDetails } from '@/components/contact-details'
+import { JsonLd } from '@/components/json-ld'
+import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
+import { humanCapitalFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Human Capital Solutions | Devhulon Business & People Solutions',
+  title: 'Human Capital Solutions | HR Consulting & Labour Relations | Devhulon',
   description:
-    'Devhulon Human Capital Solutions supports HR strategy, labour relations, employee relations, and compliance to help organisations build stronger workplaces.',
+    'Expert human capital and HR solutions including HR consulting, labour relations, compliance, and organisational development. Build fair, productive workplaces.',
+  keywords: [
+    'human capital solutions',
+    'HR consulting',
+    'labour relations',
+    'HR compliance',
+    'organisational development',
+    'performance management',
+    'employment contracts',
+    'South Africa',
+  ],
 }
 
 const subsection = (
@@ -53,6 +70,23 @@ const subsection = (
 export default function HumanCapitalSolutionsPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            serviceSchema(
+              services.find((service) => service.slug === 'human-capital-solutions')!,
+              `${siteUrl}/services/human-capital-solutions`
+            ),
+            breadcrumbSchema([
+              { name: 'Home', url: siteUrl },
+              { name: 'Services', url: `${siteUrl}/services` },
+              { name: 'Human Capital Solutions', url: `${siteUrl}/services/human-capital-solutions` },
+            ]),
+          ],
+        }}
+        id="service-human-capital-solutions-jsonld"
+      />
       <PageHero
         eyebrow="Human Capital Solutions"
         title="Building Fair, Compliant, And Productive Workplaces"
@@ -260,6 +294,35 @@ export default function HumanCapitalSolutionsPage() {
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <TestimonialsSection testimonials={testimonials} />
+
+      <FAQSection faqs={humanCapitalFAQs} />
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-secondary p-8 sm:p-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Need HR and Labour Relations Support?
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Let's build a fair, compliant, and productive workplace together.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-green px-6 py-3 text-sm font-semibold text-green-foreground transition-colors hover:bg-green/90"
+              >
+                Request a Consultation
+              </Link>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-navy mb-4">Get in Touch</h3>
+              <ContactDetails compact showForm />
+            </div>
+          </div>
         </div>
       </section>
 

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devhulon.co.za/sitemap.xml
+Host: devhulon.co.za

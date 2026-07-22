@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Home, Info, Briefcase, Building, BookOpen, Mail } from 'lucide-react'
+import { FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa'
 import { cn } from '@/lib/utils'
 
 const navItems = [
@@ -12,13 +13,43 @@ const navItems = [
   { label: 'About', href: '/about', icon: Info },
   { label: 'Services', href: '/services', icon: Briefcase },
   { label: 'Industries', href: '/industries', icon: Building },
-  { label: 'Resources', href: '/resources', icon: BookOpen },
+  { label: 'Blog', href: '/blog', icon: BookOpen },
   { label: 'Contact', href: '/contact', icon: Mail },
+]
+
+const socialLinks = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/92842789/',
+    icon: FaLinkedin,
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/Devhulon',
+    icon: FaFacebook,
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/devhulon/',
+    icon: FaInstagram,
+  },
 ]
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [open])
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white">
@@ -56,6 +87,23 @@ export function SiteHeader() {
           >
             Book a Consultation
           </Link>
+          <div className="hidden items-center gap-3 lg:flex">
+            {socialLinks.map((link) => {
+              const Icon = link.icon
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-navy transition-colors hover:bg-green hover:text-white"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              )
+            })}
+          </div>
         </nav>
 
         <button
@@ -70,9 +118,9 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex bg-navy/90 lg:hidden">
-          <aside className="w-72 border-r border-border bg-background px-4 py-6 shadow-xl">
-            <div className="flex items-center justify-between pb-6">
+        <div className="fixed inset-0 z-50 flex bg-navy/90 lg:hidden overflow-hidden">
+          <aside className="w-72 border-r border-border bg-background overflow-y-auto overflow-x-hidden shadow-xl flex flex-col">
+            <div className="flex items-center justify-between px-4 py-6 flex-shrink-0">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-green">Menu</p>
                 <p className="mt-2 text-sm text-navy-foreground">Navigate the site</p>
@@ -86,7 +134,7 @@ export function SiteHeader() {
                 <X className="h-6 w-6" />
               </button>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 px-4 flex-grow overflow-y-auto">
               {navItems.map((item) => {
                 const active = pathname === item.href
                 const Icon = item.icon
@@ -108,7 +156,27 @@ export function SiteHeader() {
                 )
               })}
             </div>
-            <div className="mt-6 border-t border-border pt-6">
+            <div className="mt-6 border-t border-border pt-6 px-4 flex-shrink-0">
+              <p className="text-xs font-semibold uppercase tracking-wide text-navy/60 mb-4">Follow Us</p>
+              <div className="flex items-center gap-4">
+                {socialLinks.map((link) => {
+                  const Icon = link.icon
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-green/10 text-green transition-colors hover:bg-green hover:text-green-foreground"
+                      aria-label={link.label}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  )
+                })}
+              </div>
+            </div>
+            <div className="mt-4 px-4 pb-6 flex-shrink-0">
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}

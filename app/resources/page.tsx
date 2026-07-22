@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FileText, BookOpen, ClipboardList, Download, ArrowRight } from 'lucide-react'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { ContactDetails } from '@/components/contact-details'
 
 export const metadata: Metadata = {
   title: 'Resources | Devhulon Business & People Solutions',
@@ -82,6 +83,26 @@ export default function ResourcesPage() {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+          <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-green">
+                Need help choosing the right resources?
+              </p>
+              <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Talk to us about the best solutions for your business.
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Whether you need guides, compliance insights, or tools to support your HR and business processes,
+                our team can help you get the right resources quickly.
+              </p>
+            </div>
+            <ContactDetails compact showForm />
+          </div>
         </div>
       </section>
 

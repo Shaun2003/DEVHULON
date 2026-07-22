@@ -1,12 +1,30 @@
 import type { Metadata } from 'next'
 import { Check } from 'lucide-react'
+import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
+import { FAQSection } from '@/components/faq-section'
+import { TestimonialsSection } from '@/components/testimonials-section'
+import { ContactDetails } from '@/components/contact-details'
+import { JsonLd } from '@/components/json-ld'
+import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
+import { businessConsultingFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Business Consulting | Devhulon Business & People Solutions',
+  title: 'Business Consulting Services | Devhulon | Strategy, Planning & Advisory',
   description:
-    'Devhulon Business Consulting provides practical strategy, planning, process improvement, advisory and growth services to help organisations improve performance and build sustainable success.',
+    'Expert business consulting services including strategy development, business planning, process improvement, and advisory. Help your organisation improve performance and achieve sustainable growth.',
+  keywords: [
+    'business consulting',
+    'business strategy',
+    'business planning',
+    'process improvement',
+    'business advisory',
+    'strategic planning',
+    'business growth',
+    'organisational development',
+    'South Africa',
+  ],
 }
 
 const featureList = [
@@ -133,6 +151,23 @@ const strategicBenefits = [
 const businessConsultingPage = () => {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            serviceSchema(
+              services.find((service) => service.slug === 'business-consulting')!,
+              `${siteUrl}/services/business-consulting`
+            ),
+            breadcrumbSchema([
+              { name: 'Home', url: siteUrl },
+              { name: 'Services', url: `${siteUrl}/services` },
+              { name: 'Business Consulting', url: `${siteUrl}/services/business-consulting` },
+            ]),
+          ],
+        }}
+        id="service-business-consulting-jsonld"
+      />
       <PageHero
         eyebrow="Business Consulting"
         title="Helping Businesses Grow With Confidence"
@@ -358,6 +393,35 @@ const businessConsultingPage = () => {
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <TestimonialsSection testimonials={testimonials} />
+
+      <FAQSection faqs={businessConsultingFAQs} />
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-secondary p-8 sm:p-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+                Need Business Consulting Support?
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Let's discuss your business goals and develop practical solutions to help you achieve sustainable growth.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-green px-6 py-3 text-sm font-semibold text-green-foreground transition-colors hover:bg-green/90"
+              >
+                Request a Consultation
+              </Link>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-navy mb-4">Get in Touch</h3>
+              <ContactDetails compact showForm />
+            </div>
+          </div>
         </div>
       </section>
 
