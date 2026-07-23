@@ -43,10 +43,9 @@ export function ServicesGrid({ showItems = true }: { showItems?: boolean }) {
             <div className="mt-4 sm:mt-5">
               <Link
                 href={`/services/${service.slug}`}
-                aria-label={`Read more about ${service.title}`}
                 className="inline-flex items-center justify-center rounded-full border border-green bg-green px-4 py-2 text-xs font-semibold uppercase tracking-wide text-navy transition-colors hover:bg-green/90 hover:border-green/90"
               >
-                Read More
+                Read More <span className="sr-only">about {service.title}</span>
               </Link>
             </div>
           )}
