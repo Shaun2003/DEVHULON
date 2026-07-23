@@ -12,6 +12,13 @@ const quickLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
+const legalLinks = [
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms & Conditions', href: '/terms-conditions' },
+  { label: 'POPIA Privacy Notice', href: '/popia-privacy-notice' },
+  { label: 'Cookie Policy', href: '/cookie-policy' },
+]
+
 const socialLinks = [
   {
     label: 'LinkedIn',
@@ -45,7 +52,7 @@ export function SiteFooter() {
       {/* Global Sweeping Wave Transition into Footer */}
       <div className="w-full relative -mb-1 z-0 pointer-events-none" style={{ minHeight: '60px' }}>
         <svg
-          className="w-full h-[60px] md:h-[120px]"
+          className="h-15 w-full md:h-30"
           preserveAspectRatio="none"
           viewBox="0 0 1440 200"
           xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +80,8 @@ export function SiteFooter() {
               alt="Devhulon logo"
               width={44}
               height={44}
+              sizes="44px"
+              quality={90}
               className="h-8 w-8 sm:h-10 sm:w-10 rounded bg-white object-contain p-0.5"
             />
             <span className="flex flex-col leading-none">
@@ -118,6 +127,24 @@ export function SiteFooter() {
                   className="text-xs sm:text-sm text-white/70 transition-colors hover:text-white"
                 >
                   {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold uppercase tracking-wide text-primary">
+            Legal
+          </h3>
+          <ul className="space-y-2">
+            {legalLinks.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-xs sm:text-sm text-white/70 transition-colors hover:text-white"
+                >
+                  {item.label}
                 </Link>
               </li>
             ))}

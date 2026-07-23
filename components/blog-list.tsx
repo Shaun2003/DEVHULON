@@ -30,8 +30,8 @@ export function BlogList({ posts }: BlogListProps) {
                 onClick={() => setSelectedCategory(category)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   selectedCategory === category
-                    ? 'border border-green bg-green text-white'
-                    : 'border border-gray-300 text-gray-700 hover:border-green hover:text-green'
+                    ? 'border border-green bg-green text-navy'
+                    : 'border border-gray-300 text-gray-700 hover:border-green hover:text-[#1c5c23]'
                 }`}
               >
                 {category}
@@ -46,6 +46,7 @@ export function BlogList({ posts }: BlogListProps) {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
+                aria-label={`Read article: ${post.title}`}
                 className="group flex flex-col rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-shadow"
               >
                 {post.image && (
@@ -59,7 +60,7 @@ export function BlogList({ posts }: BlogListProps) {
                 )}
                 <div className="flex-1 p-6 flex flex-col">
                   <div className="mb-4">
-                    <span className="inline-block rounded-full bg-green/10 px-3 py-1 text-xs font-semibold text-green uppercase tracking-wide">
+                    <span className="inline-block rounded-full bg-green/10 px-3 py-1 text-xs font-semibold text-[#1c5c23] uppercase tracking-wide">
                       {post.category}
                     </span>
                   </div>

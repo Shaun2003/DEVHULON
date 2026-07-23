@@ -46,6 +46,8 @@ export default function AboutPage() {
               alt="Devhulon consulting team collaborating in a boardroom"
               width={720}
               height={520}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={85}
               className="h-full w-full object-cover"
             />
           </div>

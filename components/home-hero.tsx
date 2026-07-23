@@ -12,8 +12,11 @@ export function HomeHero() {
           src="/hero-professionals.png"
           alt="Devhulon business professionals"
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 66vw"
+          quality={80}
           className="object-cover object-right-top opacity-90"
           priority
+          fetchPriority="high"
         />
       </div>
 

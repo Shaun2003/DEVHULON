@@ -16,7 +16,7 @@ const poppins = Poppins({
 const googleVerification = process.env.GOOGLE_SITE_VERIFICATION
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://devhulon.co.za'),
+  metadataBase: new URL('https://www.devhulon.co.za'),
   title: 'Devhulon | Business & People Solutions | South African Consulting Firm',
   description:
     'Devhulon Business & People Solutions is a trusted South African consulting firm helping businesses achieve sustainable growth through innovative solutions, people development, strategic consulting, digital transformation, and professional support services.',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     'Gauteng consulting',
   ],
   alternates: {
-    canonical: 'https://devhulon.co.za',
+    canonical: 'https://www.devhulon.co.za',
   },
   authors: [{ name: 'Devhulon' }],
   creator: 'Devhulon',
@@ -48,14 +48,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_ZA',
-    url: 'https://devhulon.co.za',
+    url: 'https://www.devhulon.co.za',
     title: 'Devhulon | Business & People Solutions',
     description:
       'Trusted South African consulting firm providing business consulting, HR solutions, recruitment, training, payroll compliance, and digital solutions.',
     siteName: 'Devhulon',
     images: [
       {
-        url: 'https://devhulon.co.za/devhulon-logo-full.jpeg',
+        url: 'https://www.devhulon.co.za/devhulon-logo-full.jpeg',
         width: 1200,
         height: 630,
         alt: 'Devhulon Business & People Solutions',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     description:
       'Trusted South African consulting firm providing business consulting, HR solutions, recruitment, training, payroll compliance, and digital solutions.',
     creator: '@devhulon',
-    images: ['https://devhulon.co.za/devhulon-logo-full.jpeg'],
+    images: ['https://www.devhulon.co.za/devhulon-logo-full.jpeg'],
   },
   robots: {
     index: true,

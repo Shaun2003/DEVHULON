@@ -60,8 +60,11 @@ export function SiteHeader() {
             alt="Devhulon Business & People Solutions"
             width={240}
             height={60}
+            sizes="(max-width: 640px) 180px, 240px"
+            quality={85}
             className="h-12 sm:h-16 w-auto mix-blend-multiply object-contain"
             priority
+            fetchPriority="high"
           />
         </Link>
 
@@ -145,10 +148,10 @@ export function SiteHeader() {
                     onClick={() => setOpen(false)}
                     className={cn(
                       'flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold transition-colors',
-                      active ? 'bg-green/10 text-green' : 'text-navy hover:bg-slate-100/70',
+                      active ? 'bg-green/10 text-[#1c5c23]' : 'text-navy hover:bg-slate-100/70',
                     )}
                   >
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-green/10 text-green">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-green/10 text-[#1c5c23]">
                       <Icon className="h-5 w-5" />
                     </span>
                     {item.label}
@@ -167,7 +170,7 @@ export function SiteHeader() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-green/10 text-green transition-colors hover:bg-green hover:text-green-foreground"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-green/10 text-[#1c5c23] transition-colors hover:bg-green hover:text-green-foreground"
                       aria-label={link.label}
                     >
                       <Icon className="h-4 w-4" />

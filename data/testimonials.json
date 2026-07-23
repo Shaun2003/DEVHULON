@@ -1,0 +1,23 @@
+[
+  {
+    "quote": "Devhulon has been instrumental in transforming our HR department. Their strategic guidance and practical solutions have significantly improved our employee retention and workplace culture.",
+    "author": "Thabo Mkhize",
+    "title": "HR Manager",
+    "company": "Manufacturing Company",
+    "rating": 5
+  },
+  {
+    "quote": "The recruitment services provided by Devhulon are exceptional. They understand our industry and consistently provide high-quality candidates that are the right fit for our team.",
+    "author": "Sarah Johnson",
+    "title": "Operations Director",
+    "company": "Professional Services Firm",
+    "rating": 5
+  },
+  {
+    "quote": "Working with Devhulon on our business strategy was exactly what we needed. Their insights helped us identify growth opportunities and streamline our operations.",
+    "author": "Mohsin Patel",
+    "title": "Business Owner",
+    "company": "Tech Startup",
+    "rating": 5
+  }
+]

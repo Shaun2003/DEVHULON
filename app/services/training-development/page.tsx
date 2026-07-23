@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { CtaSection } from '@/components/cta-section'
-import { FAQSection } from '@/components/faq-section'
 import { TestimonialsSection } from '@/components/testimonials-section'
+import { FAQSection } from '@/components/faq-section'
 import { ContactDetails } from '@/components/contact-details'
 import { JsonLd } from '@/components/json-ld'
 import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
-import { services, trainingFAQs, testimonials } from '@/lib/site-data'
+import { services, testimonials, trainingFAQs } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: 'Training & Development Services | Devhulon | Build Team Skills',

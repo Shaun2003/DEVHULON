@@ -54,6 +54,7 @@ export default function HomePage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
+              aria-label={`Read article: ${post.title}`}
               className="group rounded-3xl border border-border bg-card p-7 transition-shadow hover:shadow-lg"
             >
               <span className="inline-flex rounded-full bg-green/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-green">

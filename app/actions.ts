@@ -35,7 +35,8 @@ export async function submitContact(
     console.log('[v0] RESEND_API_KEY missing — enquiry not emailed:', { fullName, email })
     return {
       status: 'error',
-      message: 'The contact service is not configured yet. Please email us directly at info@devhulon.co.za.',
+      message:
+        'The contact service is not configured yet. Please add RESEND_API_KEY and CONTACT_EMAIL to your environment variables, or email us directly at info@devhulon.co.za.',
     }
   }
 

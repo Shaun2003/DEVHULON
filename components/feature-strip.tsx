@@ -17,11 +17,11 @@ export function FeatureStrip() {
               <f.icon className="h-6 w-6 sm:h-8 sm:w-8" strokeWidth={1.5} />
             </div>
             <div className="flex flex-col justify-center">
-              <h3 className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0A192F] leading-tight">
+              <div className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0A192F] leading-tight">
                 {f.title.split(' ').map((word, i) => (
                   <span key={i} className="block">{word}</span>
                 ))}
-              </h3>
+              </div>
             </div>
           </div>
         ))}

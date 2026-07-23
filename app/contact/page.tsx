@@ -115,6 +115,8 @@ export default function ContactPage() {
                   alt="Map of South Africa showing Devhulon service areas"
                   width={160}
                   height={160}
+                  sizes="160px"
+                  quality={85}
                   className="h-32 w-32 object-contain"
                 />
                 <div>

@@ -1,6 +1,6 @@
 import type { BlogPost, Service } from '@/lib/site-data'
 
-export const siteUrl = 'https://devhulon.co.za'
+export const siteUrl = 'https://www.devhulon.co.za'
 export const siteTitle = 'Devhulon Business & People Solutions'
 export const siteDescription =
   'Devhulon Business & People Solutions is a trusted South African consulting firm helping businesses achieve sustainable growth through innovative solutions, people development, strategic consulting, digital transformation, and professional support services.'

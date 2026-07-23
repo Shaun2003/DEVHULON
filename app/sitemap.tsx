@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts, services } from '@/lib/site-data'
 
-const baseUrl = 'https://devhulon.co.za'
+const baseUrl = 'https://www.devhulon.co.za'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -12,6 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources`, lastModified: new Date() },
     { url: `${baseUrl}/blog`, lastModified: new Date() },
     { url: `${baseUrl}/contact`, lastModified: new Date() },
+    { url: `${baseUrl}/privacy-policy`, lastModified: new Date() },
+    { url: `${baseUrl}/terms-conditions`, lastModified: new Date() },
+    { url: `${baseUrl}/popia-privacy-notice`, lastModified: new Date() },
+    { url: `${baseUrl}/cookie-policy`, lastModified: new Date() },
   ]
 
   const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
