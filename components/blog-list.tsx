@@ -46,7 +46,6 @@ export function BlogList({ posts }: BlogListProps) {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                aria-label={`Read article: ${post.title}`}
                 className="group flex flex-col rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-shadow"
               >
                 {post.image && (
@@ -67,7 +66,7 @@ export function BlogList({ posts }: BlogListProps) {
                   <h3 className="mb-2 text-lg font-bold text-navy group-hover:text-green transition-colors">{post.title}</h3>
                   <p className="mb-4 flex-1 text-sm text-muted-foreground">{post.excerpt}</p>
                   <div className="flex items-center gap-2 text-sm font-semibold text-green">
-                    Read More
+                    Read More <span className="sr-only">about {post.title}</span>
                     <ArrowRight className="h-4 w-4" />
                   </div>
                 </div>
