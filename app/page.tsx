@@ -54,7 +54,6 @@ export default function HomePage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              aria-label={`Read article: ${post.title}`}
               className="group rounded-3xl border border-border bg-card p-7 transition-shadow hover:shadow-lg"
             >
               <span className="inline-flex rounded-full bg-green/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-green">
@@ -65,7 +64,7 @@ export default function HomePage() {
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
               <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-green">
-                Read Article
+                Read Article <span className="sr-only">: {post.title}</span>
                 <ArrowRight className="h-4 w-4" />
               </div>
             </Link>
