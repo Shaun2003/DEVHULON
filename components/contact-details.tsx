@@ -32,7 +32,7 @@ export function ContactDetails({
     {
       icon: MapPin,
       label: 'Locations',
-      value: 'Thohoyandou, Limpopo & Gauteng, South Africa',
+      value: 'South Africa',
     },
   ]
 
