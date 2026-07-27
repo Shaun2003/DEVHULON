@@ -170,7 +170,7 @@ export function SiteFooter() {
             </li>
             <li className="flex items-start gap-2 sm:gap-3">
               <MapPin className="mt-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 text-primary" />
-              <span>Thohoyandou, Limpopo &amp; Gauteng, South Africa</span>
+              <span>South Africa</span>
             </li>
           </ul>
         </div>
