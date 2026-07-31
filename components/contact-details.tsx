@@ -31,15 +31,15 @@ export function ContactDetails({
     },
     {
       icon: MapPin,
-      label: 'Locations',
-      value: 'South Africa',
+      label: 'Address',
+      value: '23 Fever Street, Fleurhof, Roodepoort, Gauteng, 1709',
     },
   ]
 
   const visibleDetails = details.filter((detail) => {
     if (detail.label === 'Email') return showEmail
     if (detail.label === 'Phone') return showPhone
-    if (detail.label === 'Locations') return showLocation
+    if (detail.label === 'Address') return showLocation
     return true
   })
 
