@@ -26,8 +26,8 @@ const details = [
   },
   {
     icon: MapPin,
-    label: 'Locations',
-    value: 'Thohoyandou, Limpopo & Gauteng',
+    label: 'Address',
+    value: '23 Fever Street, Fleurhof, Roodepoort, Gauteng, 1709',
   },
 ]
 
@@ -108,25 +108,18 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="mt-10 rounded-2xl border border-border bg-secondary p-6">
-              <div className="flex items-center gap-6">
-                <Image
-                  src="/south-africa-map.png"
-                  alt="Map of South Africa showing Devhulon service areas"
-                  width={160}
-                  height={160}
-                  sizes="160px"
-                  quality={85}
-                  className="h-32 w-32 object-contain"
-                />
-                <div>
-                  <h3 className="text-lg font-bold text-navy">Serving Businesses</h3>
-                  <p className="text-lg font-bold text-green">Across South Africa</p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    From Limpopo to Gauteng and beyond.
-                  </p>
-                </div>
-              </div>
+            <div className="mt-10 overflow-hidden rounded-2xl border border-border shadow-sm">
+              <iframe
+                src="https://maps.google.com/maps?q=23%20Fever%20Street,%20Fleurhof,%20Roodepoort,%20Gauteng,%201709&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Devhulon Office Location"
+                className="w-full"
+              ></iframe>
             </div>
           </div>
 
