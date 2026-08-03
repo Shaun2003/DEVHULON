@@ -48,7 +48,7 @@ export function ContactDetails({
       <div className="flex flex-wrap gap-4 sm:gap-6">
         {visibleDetails.map((detail) => (
           <div key={detail.label} className="flex items-center gap-2">
-            <detail.icon className="h-4 w-4 text-green flex-shrink-0" />
+            <detail.icon className="h-4 w-4 text-green shrink-0" />
             {detail.href ? (
               <a
                 href={detail.href}
@@ -63,7 +63,7 @@ export function ContactDetails({
         ))}
         {showForm && (
           <div className="flex items-center gap-2">
-            <Mail className="h-4 w-4 text-green flex-shrink-0" />
+            <Mail className="h-4 w-4 text-green shrink-0" />
             <a
               href="/contact"
               className="text-sm text-muted-foreground hover:text-green transition-colors"
