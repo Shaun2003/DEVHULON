@@ -8,8 +8,9 @@ import { JsonLd } from '@/components/json-ld'
 import { blogPostingSchema, breadcrumbSchema, siteUrl } from '@/lib/seo'
 import { blogPosts } from '@/lib/site-data'
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const post = blogPosts.find((p) => p.slug === slug)
 
   if (!post) {
     return {
@@ -70,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         }}
         id={`blog-post-jsonld-${post.slug}`}
       />
-      <section className="relative w-full bg-gradient-to-br from-navy via-navy to-navy/90 text-white py-12 sm:py-16">
+      <section className="relative w-full bg-linear-to-br from-navy via-navy to-navy/90 text-white py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
