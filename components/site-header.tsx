@@ -123,7 +123,7 @@ export function SiteHeader() {
       {open && (
         <div className="fixed inset-0 z-50 flex bg-navy/90 lg:hidden overflow-hidden">
           <aside className="w-72 border-r border-border bg-background overflow-y-auto overflow-x-hidden shadow-xl flex flex-col">
-            <div className="flex items-center justify-between px-4 py-6 flex-shrink-0">
+            <div className="flex items-center justify-between px-4 py-6 shrink-0">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-green">Menu</p>
                 <p className="mt-2 text-sm text-navy-foreground">Navigate the site</p>
@@ -137,7 +137,7 @@ export function SiteHeader() {
                 <X className="h-6 w-6" />
               </button>
             </div>
-            <div className="space-y-2 px-4 flex-grow overflow-y-auto">
+            <div className="space-y-2 px-4 grow overflow-y-auto">
               {navItems.map((item) => {
                 const active = pathname === item.href
                 const Icon = item.icon
@@ -159,7 +159,7 @@ export function SiteHeader() {
                 )
               })}
             </div>
-            <div className="mt-6 border-t border-border pt-6 px-4 flex-shrink-0">
+            <div className="mt-6 border-t border-border pt-6 px-4 shrink-0">
               <p className="text-xs font-semibold uppercase tracking-wide text-navy/60 mb-4">Follow Us</p>
               <div className="flex items-center gap-4">
                 {socialLinks.map((link) => {
@@ -179,7 +179,7 @@ export function SiteHeader() {
                 })}
               </div>
             </div>
-            <div className="mt-4 px-4 pb-6 flex-shrink-0">
+            <div className="mt-4 px-4 pb-6 shrink-0">
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
