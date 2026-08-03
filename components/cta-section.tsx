@@ -18,7 +18,7 @@ export function CtaSection() {
               href="/contact"
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#3CB54A] px-6 py-3 sm:px-7 sm:py-3.5 text-xs sm:text-[13px] tracking-widest uppercase font-semibold text-white transition-colors hover:bg-[#329E40] shadow-md hover:shadow-lg"
             >
-              Book Your Consultation Today {'>'}
+              Book Your Consultation Today &gt;
             </Link>
           </div>
 
