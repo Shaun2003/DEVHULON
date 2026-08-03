@@ -82,13 +82,13 @@ export function HomeHero() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3CB54A] px-6 py-3 sm:px-7 sm:py-3.5 text-xs sm:text-[13px] tracking-wide text-white transition-colors hover:bg-[#329E40] hover:shadow-lg uppercase shadow-md"
             >
-              BOOK A CONSULTATION {'>'}
+              BOOK A CONSULTATION &gt;
             </Link>
             <Link
               href="/services"
               className="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-white/60 bg-transparent px-6 py-3 sm:px-7 sm:py-3.5 text-xs sm:text-[13px] tracking-wide text-white transition-colors hover:bg-white/10 uppercase"
             >
-              EXPLORE OUR SERVICES {'>'}
+              EXPLORE OUR SERVICES &gt;
             </Link>
           </div>
         </div>
