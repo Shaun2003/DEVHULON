@@ -10,12 +10,13 @@ import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
 import { services, testimonials, trainingFAQs } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Training & Development Services | Devhulon | Build Team Skills',
+  title: 'Training & Development Services in Roodepoort | Devhulon',
   description:
-    'Professional training and development programmes including skills development, leadership training, and compliance training. Build capability across your organisation.',
+    'Professional training and development programmes for businesses in Roodepoort, Johannesburg, Gauteng and across South Africa. Build capability across your organisation.',
   keywords: [
     'training and development',
-    'skills development',
+    'training and development Roodepoort',
+    'skills development Johannesburg',
     'leadership training',
     'compliance training',
     'workplace training',
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
     'training programmes',
     'South Africa',
   ],
+  alternates: {
+    canonical: 'https://www.devhulon.co.za/services/training-development',
+  },
 }
 
 const trainingServices = [
@@ -97,7 +101,7 @@ export default function TrainingDevelopmentPage() {
       <PageHero
         eyebrow="Training & Development"
         title="Developing People. Strengthening Businesses."
-        subtitle="A skilled workforce is one of the greatest assets any organisation can have. We help businesses identify skills gaps, develop employee capabilities, and implement practical development strategies that improve performance."
+        subtitle="Helping organisations in Roodepoort, Johannesburg, and across South Africa close skills gaps and build stronger, more capable teams."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
