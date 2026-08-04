@@ -10,12 +10,13 @@ import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
 import { digitalSolutionsFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Digital Solutions Services | Devhulon | Web Design & Branding',
+  title: 'Digital Solutions Services in Roodepoort | Devhulon',
   description:
-    'Digital solutions including website development, logo design, branding, Google Business Profile, and social media setup. Build your online presence.',
+    'Digital solutions including website development, logo design, branding, Google Business Profile, and social media setup for businesses in Roodepoort, Johannesburg, Gauteng and across South Africa.',
   keywords: [
     'digital solutions',
-    'website development',
+    'digital solutions Roodepoort',
+    'website development Johannesburg',
     'logo design',
     'branding',
     'Google Business Profile',
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
     'online presence',
     'South Africa',
   ],
+  alternates: {
+    canonical: 'https://www.devhulon.co.za/services/digital-solutions',
+  },
 }
 
 const subsection = (
@@ -90,7 +94,7 @@ export default function DigitalSolutionsPage() {
       <PageHero
         eyebrow="Digital Solutions"
         title="Empowering Businesses Through Technology"
-        subtitle="We provide practical digital solutions designed to help organisations build credibility, strengthen their brand, improve customer engagement, and operate more efficiently."
+        subtitle="Helping businesses in Roodepoort, Johannesburg, and across South Africa build a stronger digital presence through practical website, branding, and online growth solutions."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
