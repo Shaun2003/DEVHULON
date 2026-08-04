@@ -10,11 +10,14 @@ import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
 import { businessConsultingFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Business Consulting Services | Devhulon | Strategy, Planning & Advisory',
+  title: 'Business Consulting Services in Roodepoort, Johannesburg & South Africa | Devhulon',
   description:
-    'Expert business consulting services including strategy development, business planning, process improvement, and advisory. Help your organisation improve performance and achieve sustainable growth.',
+    'Expert business consulting services for organisations in Roodepoort, Johannesburg, Gauteng and across South Africa. Improve strategy, planning, operations and growth.',
   keywords: [
     'business consulting',
+    'business consulting Roodepoort',
+    'business consulting Johannesburg',
+    'business consulting Gauteng',
     'business strategy',
     'business planning',
     'process improvement',
@@ -24,6 +27,9 @@ export const metadata: Metadata = {
     'organisational development',
     'South Africa',
   ],
+  alternates: {
+    canonical: 'https://www.devhulon.co.za/services/business-consulting',
+  },
 }
 
 const featureList = [
@@ -170,7 +176,7 @@ const businessConsultingPage = () => {
       <PageHero
         eyebrow="Business Consulting"
         title="Helping Businesses Grow With Confidence"
-        subtitle="Every successful business needs a clear direction and the right support to achieve sustainable growth. Devhulon provides practical consulting services that improve performance, increase efficiency, and enable better decisions."
+        subtitle="Supporting businesses across Roodepoort, Johannesburg, Gauteng, and South Africa with practical strategy, planning, and advisory services that improve performance and enable sustainable growth."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
