@@ -10,11 +10,13 @@ import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
 import { recruitmentFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Recruitment & Talent Acquisition Services | Devhulon | Find Top Talent',
+  title: 'Recruitment & Talent Acquisition Services in Roodepoort | Devhulon',
   description:
-    'Professional recruitment and talent acquisition services including permanent, temporary, and executive recruitment. Find the right candidates for your business.',
+    'Professional recruitment and talent acquisition services for businesses in Roodepoort, Johannesburg, Gauteng and across South Africa. Find the right candidates for your business.',
   keywords: [
     'recruitment services',
+    'recruitment agency Roodepoort',
+    'recruitment services Johannesburg',
     'talent acquisition',
     'permanent recruitment',
     'executive search',
@@ -23,6 +25,9 @@ export const metadata: Metadata = {
     'hiring',
     'South Africa',
   ],
+  alternates: {
+    canonical: 'https://www.devhulon.co.za/services/recruitment-talent-acquisition',
+  },
 }
 
 const serviceList = [
@@ -99,7 +104,7 @@ export default function RecruitmentPage() {
       <PageHero
         eyebrow="Recruitment & Talent Acquisition"
         title="Finding The Right Talent For Your Business"
-        subtitle="People are the driving force behind every successful organisation. We help businesses attract, identify, and recruit qualified professionals who align with their goals and values."
+        subtitle="Helping businesses in Roodepoort, Johannesburg, and across South Africa attract, identify, and recruit professionals who align with their goals and values."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
