@@ -10,12 +10,13 @@ import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
 import { payrollFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Payroll & HR Compliance Services | Devhulon | Statutory Compliance',
+  title: 'Payroll & HR Compliance Services in Roodepoort | Devhulon',
   description:
-    'Expert payroll administration and HR compliance services including PAYE processing, leave management, and statutory compliance. Stay compliant with South African labour laws.',
+    'Expert payroll administration and HR compliance services for businesses in Roodepoort, Johannesburg, Gauteng and across South Africa. Stay compliant with South African labour laws.',
   keywords: [
     'payroll processing',
-    'HR compliance',
+    'payroll services Roodepoort',
+    'HR compliance Johannesburg',
     'statutory compliance',
     'leave management',
     'PAYE',
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
     'employment compliance',
     'South Africa',
   ],
+  alternates: {
+    canonical: 'https://www.devhulon.co.za/services/payroll-hr-compliance',
+  },
 }
 
 const subsection = (
@@ -90,7 +94,7 @@ export default function PayrollHrCompliancePage() {
       <PageHero
         eyebrow="Payroll & HR Compliance"
         title="Reliable Payroll Solutions For Your Business"
-        subtitle="Managing payroll can be time-consuming and complex. We provide accurate, confidential, and reliable payroll services that keep your employees paid correctly while ensuring compliance with South African payroll legislation."
+        subtitle="Supporting organisations in Roodepoort, Johannesburg, and across South Africa with accurate payroll administration and dependable HR compliance support."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
