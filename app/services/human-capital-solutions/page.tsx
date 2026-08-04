@@ -10,12 +10,14 @@ import { breadcrumbSchema, serviceSchema, siteUrl } from '@/lib/seo'
 import { humanCapitalFAQs, services, testimonials } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'Human Capital Solutions | HR Consulting & Labour Relations | Devhulon',
+  title: 'HR Consulting & Human Capital Solutions in Roodepoort | Devhulon',
   description:
-    'Expert human capital and HR solutions including HR consulting, labour relations, compliance, and organisational development. Build fair, productive workplaces.',
+    'Expert HR consulting and human capital solutions for businesses in Roodepoort, Johannesburg, Gauteng and across South Africa. Build fair, productive workplaces.',
   keywords: [
     'human capital solutions',
-    'HR consulting',
+    'HR consulting Roodepoort',
+    'HR consulting Johannesburg',
+    'HR consulting Gauteng',
     'labour relations',
     'HR compliance',
     'organisational development',
@@ -23,6 +25,9 @@ export const metadata: Metadata = {
     'employment contracts',
     'South Africa',
   ],
+  alternates: {
+    canonical: 'https://www.devhulon.co.za/services/human-capital-solutions',
+  },
 }
 
 const subsection = (
@@ -90,7 +95,7 @@ export default function HumanCapitalSolutionsPage() {
       <PageHero
         eyebrow="Human Capital Solutions"
         title="Building Fair, Compliant, And Productive Workplaces"
-        subtitle="Managing workplace relationships effectively is essential for organisational success. We help employers navigate workplace challenges while ensuring compliance with South African labour legislation."
+        subtitle="Supporting employers in Roodepoort, Johannesburg, and across South Africa with practical HR consulting, labour relations support and workplace compliance solutions."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
