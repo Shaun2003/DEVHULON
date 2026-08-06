@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { JsonLd } from '@/components/json-ld'
+import { AdSense } from '@/components/adsense'
 import { organizationSchema, websiteSchema } from '@/lib/seo'
 import './globals.css'
 
@@ -103,6 +104,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        <AdSense />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
