@@ -9,6 +9,11 @@ export default function Head() {
       <meta name="theme-color" content="#16294d" />
       <meta name="color-scheme" content="light" />
       <meta name="supported-color-schemes" content="light" />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6621331032123517"
+        crossOrigin="anonymous"
+      ></script>
     </>
   )
 }
