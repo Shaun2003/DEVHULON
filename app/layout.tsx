@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { JsonLd } from '@/components/json-ld'
+import Script from 'next/script'
 import { organizationSchema, websiteSchema } from '@/lib/seo'
 import './globals.css'
 
@@ -33,9 +34,6 @@ export const metadata: Metadata = {
     'Limpopo consulting',
     'Gauteng consulting',
   ],
-  alternates: {
-    canonical: 'https://www.devhulon.co.za',
-  },
   authors: [{ name: 'Devhulon' }],
   creator: 'Devhulon',
   publisher: 'Devhulon',
@@ -101,6 +99,14 @@ export default function RootLayout({
           }}
           id="devhulon-organization-website"
         />
+        {process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
       </head>
       <body className="font-sans antialiased">
         <SiteHeader />
