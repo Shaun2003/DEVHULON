@@ -51,7 +51,7 @@ export default function AboutPage() {
           </div>
           <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
             <video
-              src="/2a48c251-0c46-497e-93ca-9ea48bb648b1.mov"
+              src="/about_video.mp4"
               autoPlay
               muted
               loop
