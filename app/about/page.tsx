@@ -25,29 +25,37 @@ export default function AboutPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-5 text-base leading-relaxed text-foreground/80">
             <p>
-              Devhulon Business &amp; People Solutions is a South African consulting firm committed
-              to delivering innovative business solutions that help organisations grow, improve
-              performance, and achieve sustainable success.
+              Devhulon Business &amp; People Solutions is a South African consulting firm that helps
+              businesses build stronger organisations, improve performance, and achieve sustainable
+              growth.
             </p>
             <p>
-              We combine business consulting, human capital solutions, training and development,
-              digital solutions, and strategic advisory to empower businesses and build
-              high-performing teams.
+              We provide practical solutions across business consulting, human capital and HR
+              solutions, payroll and compliance, training and development, digital services, and
+              strategic advisory. Our approach starts with understanding each client&apos;s business,
+              challenges, and goals so that we can provide solutions that are practical, relevant,
+              and built for real business needs.
             </p>
             <p>
-              We believe that people are every organisation&apos;s greatest asset. When supported by
-              the right systems and strategies, they drive lasting impact and create a better
-              tomorrow.
+              We help businesses strengthen the foundations that support their success, including
+              people, processes, performance, compliance, systems, and digital presence. Whether you
+              are building a new business, improving an existing operation, or preparing for growth,
+              we provide solutions that help you move forward with greater structure and confidence.
             </p>
+            <p>
+              At Devhulon, we believe sustainable business success comes from bringing together the
+              right people, effective systems, sound strategy, and consistent execution. When these
+              elements work together, businesses are better positioned to perform, adapt, and grow.
+            </p>
+            <p className="font-semibold text-navy">Devhulon. Building Better Businesses.</p>
           </div>
           <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
-            <Image
-              src="/about-team.png"
-              alt="Devhulon consulting team collaborating in a boardroom"
-              width={720}
-              height={520}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={85}
+            <video
+              src="/2a48c251-0c46-497e-93ca-9ea48bb648b1.mov"
+              autoPlay
+              muted
+              loop
+              playsInline
               className="h-full w-full object-cover"
             />
           </div>
