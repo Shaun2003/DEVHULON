@@ -52,8 +52,8 @@ export default function AboutPage() {
           <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
             <video
               src="/about_video.mp4"
+              controls
               autoPlay
-              muted
               loop
               playsInline
               className="h-full w-full object-cover"
