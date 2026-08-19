@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { JsonLd } from '@/components/json-ld'
+import { WhatsappButton } from '@/components/whatsapp-button'
 import Script from 'next/script'
 import { organizationSchema, websiteSchema } from '@/lib/seo'
 import './globals.css'
@@ -112,6 +113,7 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <WhatsappButton />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
