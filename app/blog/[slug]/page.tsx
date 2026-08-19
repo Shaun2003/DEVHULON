@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, Calendar, User, Share2 } from 'lucide-react'
+import { ArrowLeft, Calendar, User } from 'lucide-react'
+import { SocialShare } from '@/components/social-share'
 import { CtaSection } from '@/components/cta-section'
 import { ContactDetails } from '@/components/contact-details'
 import { JsonLd } from '@/components/json-ld'
@@ -99,10 +100,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <User className="h-4 w-4" />
               {post.author}
             </div>
-            <button className="flex items-center gap-2 ml-auto hover:text-white transition-colors">
-              <Share2 className="h-4 w-4" />
-              Share
-            </button>
+            <SocialShare url={`${siteUrl}/blog/${post.slug}`} title={post.title} />
           </div>
         </div>
       </section>
