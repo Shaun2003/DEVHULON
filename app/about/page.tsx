@@ -25,6 +25,11 @@ export default function AboutPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-5 text-base leading-relaxed text-foreground/80">
             <p>
+              The name Devhulon is inspired by the TshiVenda word Devhula, meaning north.
+              For us, north represents direction, progress, and growth. It also reflects our connection to Limpopo, where the richness of the land and the idea of fertile ground inspire our belief that businesses, like people, can be developed to grow, prosper, and create lasting value.
+              This idea is at the heart of Devhulon.
+            </p>
+            <p>
               Devhulon Business &amp; People Solutions is a South African consulting firm that helps
               businesses build stronger organisations, improve performance, and achieve sustainable
               growth.
