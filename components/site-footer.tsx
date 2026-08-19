@@ -8,6 +8,7 @@ const quickLinks = [
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Industries', href: '/industries' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -170,7 +171,7 @@ export function SiteFooter() {
             </li>
             <li className="flex items-start gap-2 sm:gap-3">
               <MapPin className="mt-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 text-primary" />
-              <span>South Africa</span>
+              <span>Thohoyandou, Limpopo &amp; Gauteng, South Africa</span>
             </li>
           </ul>
         </div>
