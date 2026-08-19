@@ -13,6 +13,7 @@ const navItems = [
   { label: 'About', href: '/about', icon: Info },
   { label: 'Services', href: '/services', icon: Briefcase },
   { label: 'Industries', href: '/industries', icon: Building },
+  { label: 'Pricing', href: '/pricing', icon: BookOpen },
   { label: 'Blog', href: '/blog', icon: BookOpen },
   { label: 'Contact', href: '/contact', icon: Mail },
 ]
