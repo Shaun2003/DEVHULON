@@ -113,6 +113,22 @@ Preview production build locally:
 pnpm start
 ```
 
+## WordPress and Vercel Deployment
+
+The public Next.js site is intended to remain on Vercel. WordPress is the headless CMS, preferably on a subdomain such as `cms.cybercircuit.co.za`. Blog content is loaded exclusively from WordPress; configure `WORDPRESS_API_URL` before deploying.
+
+Add these variables in Vercel for Production, Preview, and Development as appropriate:
+
+```text
+NEXT_PUBLIC_SITE_URL=https://www.cybercircuit.co.za
+WORDPRESS_API_URL=https://cms.cybercircuit.co.za/wp-json/wp/v2
+RESEND_API_KEY=...
+CONTACT_EMAIL=info@devhulon.co.za
+CONTACT_FROM_EMAIL=...
+```
+
+WordPress must allow public REST API requests and use the same article slugs as the existing blog URLs. After adding or changing variables, redeploy the Vercel project. DNS should point the main domain to Vercel and the CMS subdomain to the WordPress cPanel installation.
+
 ## Notes
 
 - The favicon and site icon are configured in `app/head.tsx` and `app/layout.tsx`.
