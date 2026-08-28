@@ -4,12 +4,13 @@ import { HomeHero } from '@/components/home-hero'
 import { FeatureStrip } from '@/components/feature-strip'
 import { ServicesGrid } from '@/components/services-grid'
 import { CtaSection } from '@/components/cta-section'
-import { getWordPressPosts, industries, testimonials, whyChoose } from '@/lib/site-data'
+import { getGoogleTestimonials, getWordPressPosts, industries, whyChoose } from '@/lib/site-data'
 
 export const revalidate = 300
 
 export default async function HomePage() {
   const posts = await getWordPressPosts()
+  const testimonials = await getGoogleTestimonials()
   const latestPosts = [...posts]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3)
@@ -52,12 +53,12 @@ export default async function HomePage() {
             Read our latest articles to stay informed on business strategy, HR best practices, recruitment, and digital transformation.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-2 md:overflow-visible md:pb-0 lg:grid-cols-3">
           {latestPosts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group rounded-3xl border border-border bg-card p-7 transition-shadow hover:shadow-lg"
+              className="group min-w-[84vw] snap-start rounded-3xl border border-border bg-card p-7 transition-shadow hover:shadow-lg md:min-w-0"
             >
               <span className="inline-flex rounded-full bg-green/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-green">
                 {post.category}
@@ -65,7 +66,7 @@ export default async function HomePage() {
               <h3 className="mt-5 text-xl font-bold text-navy transition-colors group-hover:text-green">
                 {post.title}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
+              <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
               <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-green">
                 Read Article <span className="sr-only">: {post.title}</span>
                 <ArrowRight className="h-4 w-4" />
@@ -107,6 +108,11 @@ export default async function HomePage() {
                 </div>
               </div>
             ))}
+            {testimonials.length === 0 && (
+              <p className="text-center text-sm text-muted-foreground md:col-span-2 lg:col-span-3">
+                Google reviews will appear here soon.
+              </p>
+            )}
           </div>
         </div>
       </section>
