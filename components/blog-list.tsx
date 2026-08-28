@@ -20,7 +20,8 @@ export function BlogList({ posts }: BlogListProps) {
 
   return (
     <>
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="site-section">
+        <div className="site-shell">
         <div className="mb-12">
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
@@ -46,7 +47,7 @@ export function BlogList({ posts }: BlogListProps) {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-shadow"
+                className="group site-card flex flex-col overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg"
               >
                 {post.image && (
                   <div className="h-48 w-full bg-gray-200 overflow-hidden">
@@ -64,7 +65,7 @@ export function BlogList({ posts }: BlogListProps) {
                     </span>
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-navy group-hover:text-green transition-colors">{post.title}</h3>
-                  <p className="mb-4 flex-1 text-sm text-muted-foreground">{post.excerpt}</p>
+                  <p className="mb-4 line-clamp-3 flex-1 text-sm text-muted-foreground">{post.excerpt}</p>
                   <div className="flex items-center gap-2 text-sm font-semibold text-green">
                     Read More <span className="sr-only">about {post.title}</span>
                     <ArrowRight className="h-4 w-4" />
@@ -78,6 +79,7 @@ export function BlogList({ posts }: BlogListProps) {
             <p className="text-muted-foreground">No articles found in this category. Check back soon for new insights.</p>
           </div>
         )}
+        </div>
       </section>
     </>
   )
