@@ -3,7 +3,7 @@ import { PageHero } from '@/components/page-hero'
 import { ContactDetails } from '@/components/contact-details'
 import { CtaSection } from '@/components/cta-section'
 import { BlogList } from '@/components/blog-list'
-import { getWordPressPosts } from '@/lib/wordpress'
+import { getWordPressPosts } from '@/lib/site-data'
 
 export const revalidate = 300
 
