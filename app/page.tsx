@@ -109,9 +109,17 @@ export default async function HomePage() {
               </div>
             ))}
             {testimonials.length === 0 && (
-              <p className="text-center text-sm text-muted-foreground md:col-span-2 lg:col-span-3">
-                Google reviews will appear here soon.
-              </p>
+              <div className="text-center md:col-span-2 lg:col-span-3">
+                <p className="text-sm text-muted-foreground">No Google reviews are available yet.</p>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Devhulon&query_place_id=ChIJZ-KRlYKzjicRsWjaNPwjL08"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex text-sm font-semibold text-green underline underline-offset-4 hover:text-navy"
+                >
+                  View Devhulon on Google
+                </a>
+              </div>
             )}
           </div>
         </div>
