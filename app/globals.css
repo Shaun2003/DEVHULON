@@ -105,6 +105,18 @@
 }
 
 @layer components {
+  .site-section {
+    @apply px-4 py-12 sm:px-6 sm:py-20 lg:px-8;
+  }
+
+  .site-shell {
+    @apply mx-auto w-full max-w-7xl;
+  }
+
+  .site-card {
+    @apply rounded-3xl border border-border bg-card shadow-sm;
+  }
+
   .wordpress-content {
     @apply text-base leading-8 text-muted-foreground;
   }
@@ -178,5 +190,80 @@
 
   .wordpress-content th {
     @apply bg-muted font-semibold text-navy;
+  }
+
+  .wordpress-content .wp-block-columns {
+    @apply grid gap-6 md:grid-cols-2;
+  }
+
+  .wordpress-content .wp-block-columns:has(> .wp-block-column:nth-child(3)) {
+    @apply lg:grid-cols-3;
+  }
+
+  .wordpress-content .wp-block-column > * + * {
+    @apply mt-5;
+  }
+
+  .wordpress-content .wp-block-group,
+  .wordpress-content .wp-block-cover {
+    @apply rounded-2xl border border-border p-6;
+  }
+
+  .wordpress-content .has-background {
+    @apply rounded-2xl px-6 py-5;
+  }
+
+  .wordpress-content .has-navy-background-color {
+    @apply bg-navy text-white;
+  }
+
+  .wordpress-content .has-green-background-color {
+    @apply bg-green text-green-foreground;
+  }
+
+  .wordpress-content .has-light-gray-background-color {
+    @apply bg-muted;
+  }
+
+  .wordpress-content .has-navy-color {
+    @apply text-navy;
+  }
+
+  .wordpress-content .has-green-color {
+    @apply text-green;
+  }
+
+  .wordpress-content .wp-block-buttons {
+    @apply flex flex-wrap gap-3;
+  }
+
+  .wordpress-content .wp-block-button__link {
+    @apply inline-flex rounded-md bg-green px-5 py-3 font-semibold text-green-foreground no-underline transition-colors hover:bg-green/90;
+  }
+
+  .wordpress-content .wp-block-separator {
+    @apply border-0 border-t-2 border-green/20;
+  }
+
+  .wordpress-content .wp-block-quote,
+  .wordpress-content .wp-block-pullquote {
+    @apply border-l-4 border-green bg-green/5 px-6 py-5 text-navy;
+  }
+
+  .wordpress-content .wp-block-gallery {
+    @apply grid gap-4 sm:grid-cols-2;
+  }
+
+  .wordpress-content .wp-block-gallery figure {
+    @apply my-0;
+  }
+
+  .wordpress-content .aligncenter {
+    @apply mx-auto;
+  }
+
+  .wordpress-content .alignwide,
+  .wordpress-content .alignfull {
+    @apply max-w-none;
   }
 }
