@@ -110,9 +110,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
-      <section className="site-section">
+      <section className="site-section bg-slate-50/60">
         <div className="site-shell max-w-4xl">
-        <article className="site-card p-8 sm:p-10">
+        <article className="site-card overflow-hidden p-6 sm:p-10 lg:p-12">
         <div className="wordpress-content max-w-none">
           {post.contentHtml ? (
             <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
