@@ -429,7 +429,7 @@ export async function getGoogleTestimonials(): Promise<Testimonial[]> {
       `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?key=${encodeURIComponent(apiKey)}`,
       {
         headers: {
-          'X-Goog-FieldMask': 'reviews',
+          'X-Goog-FieldMask': 'reviews.rating,reviews.text,reviews.authorAttribution.displayName',
         },
         next: { revalidate: 900 },
       },
