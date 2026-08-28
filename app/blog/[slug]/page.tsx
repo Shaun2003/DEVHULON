@@ -7,7 +7,7 @@ import { CtaSection } from '@/components/cta-section'
 import { ContactDetails } from '@/components/contact-details'
 import { JsonLd } from '@/components/json-ld'
 import { blogPostingSchema, breadcrumbSchema, siteUrl } from '@/lib/seo'
-import { getWordPressPost, getWordPressPosts } from '@/lib/wordpress'
+import { getWordPressPost, getWordPressPosts } from '@/lib/site-data'
 
 export const revalidate = 300
 export const dynamicParams = true
@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="site-section">
         <div className="site-shell max-w-4xl">
         <article className="site-card p-8 sm:p-10">
-        <div className="prose prose-lg max-w-none">
+        <div className="wordpress-content max-w-none">
           {post.contentHtml ? (
             <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
           ) : post.content.split('\n\n').map((paragraph, index) => {
