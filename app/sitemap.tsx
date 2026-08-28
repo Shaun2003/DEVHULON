@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { services } from '@/lib/site-data'
-import { getWordPressPosts } from '@/lib/wordpress'
+import { getWordPressPosts, services } from '@/lib/site-data'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.cybercircuit.co.za'
 
