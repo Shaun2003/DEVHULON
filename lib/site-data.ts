@@ -17,6 +17,16 @@ export type Testimonial = {
   rating?: number
 }
 
+type GoogleReview = {
+  rating?: number
+  text?: { text?: string }
+  authorAttribution?: { displayName?: string }
+}
+
+type GooglePlaceResponse = {
+  reviews?: GoogleReview[]
+}
+
 export type BlogPost = {
   slug: string
   title: string
@@ -407,4 +417,35 @@ export const digitalSolutionsFAQs = [
 ]
 
 export const testimonials: Testimonial[] = testimonialsData
+
+export async function getGoogleTestimonials(): Promise<Testimonial[]> {
+  const placeId = process.env.GOOGLE_PLACE_ID
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY
+
+  if (!placeId || !apiKey) return []
+
+  try {
+    const response = await fetch(
+      `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?fields=reviews&key=${encodeURIComponent(apiKey)}`,
+      { next: { revalidate: 900 } },
+    )
+
+    if (!response.ok) return []
+
+    const data = (await response.json()) as GooglePlaceResponse
+    const reviews = (data.reviews ?? [])
+      .filter((review) => review.text?.text && review.authorAttribution?.displayName)
+      .map((review) => ({
+        quote: review.text!.text!,
+        author: review.authorAttribution!.displayName!,
+        title: 'Google Review',
+        company: 'Verified Google customer',
+        rating: review.rating,
+      }))
+
+    return reviews
+  } catch {
+    return []
+  }
+}
 
