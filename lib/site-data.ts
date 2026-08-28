@@ -426,8 +426,13 @@ export async function getGoogleTestimonials(): Promise<Testimonial[]> {
 
   try {
     const response = await fetch(
-      `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?fields=reviews&key=${encodeURIComponent(apiKey)}`,
-      { next: { revalidate: 900 } },
+      `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?key=${encodeURIComponent(apiKey)}`,
+      {
+        headers: {
+          'X-Goog-FieldMask': 'reviews',
+        },
+        next: { revalidate: 900 },
+      },
     )
 
     if (!response.ok) return []
