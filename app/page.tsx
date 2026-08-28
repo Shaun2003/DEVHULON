@@ -4,8 +4,7 @@ import { HomeHero } from '@/components/home-hero'
 import { FeatureStrip } from '@/components/feature-strip'
 import { ServicesGrid } from '@/components/services-grid'
 import { CtaSection } from '@/components/cta-section'
-import { industries, testimonials, whyChoose } from '@/lib/site-data'
-import { getWordPressPosts } from '@/lib/wordpress'
+import { getWordPressPosts, industries, testimonials, whyChoose } from '@/lib/site-data'
 
 export const revalidate = 300
 
