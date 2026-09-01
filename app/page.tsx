@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, Star } from 'lucide-react'
 import { HomeHero } from '@/components/home-hero'
 import { FeatureStrip } from '@/components/feature-strip'
 import { ServicesGrid } from '@/components/services-grid'
@@ -10,7 +10,8 @@ export const revalidate = 300
 
 export default async function HomePage() {
   const posts = await getWordPressPosts()
-  const testimonials = await getGoogleTestimonials()
+  const googleTestimonials = await getGoogleTestimonials()
+  const testimonials = googleTestimonials
   const latestPosts = [...posts]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3)
@@ -97,32 +98,65 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <div key={index} className="rounded-3xl border border-border bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-                <p className="text-sm leading-relaxed text-muted-foreground italic">“{testimonial.quote}”</p>
-                <div className="mt-6 border-t border-border pt-5">
-                  <p className="font-semibold text-navy">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                  <p className="mt-1 text-sm font-medium text-green">{testimonial.company}</p>
-                </div>
+          <div className="mt-12 overflow-hidden">
+            {testimonials.length > 0 ? (
+              <div className="flex gap-6 motion-safe:animate-[review-scroll_28s_linear_infinite]">
+                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                  <div
+                    key={`${testimonial.author}-${index}`}
+                    className="w-[86vw] max-w-[360px] shrink-0 rounded-3xl border border-border bg-white p-7 shadow-sm md:w-[32rem]"
+                  >
+                    <div className="flex items-center gap-1" aria-label={`${testimonial.rating ?? 0} out of 5 stars`}>
+                      {Array.from({ length: 5 }, (_, starIndex) => (
+                        <Star
+                          key={starIndex}
+                          className={`h-4 w-4 ${starIndex < (testimonial.rating ?? 0) ? 'fill-green text-green' : 'text-border'}`}
+                        />
+                      ))}
+                    </div>
+                    <p className="mt-5 text-sm leading-relaxed text-muted-foreground italic">“{testimonial.quote}”</p>
+                    <div className="mt-6 border-t border-border pt-5">
+                      <div className="flex items-center gap-3">
+                        {testimonial.image ? (
+                          <img
+                            src={testimonial.image}
+                            alt=""
+                            className="h-10 w-10 rounded-full object-cover"
+                          />
+                        ) : (
+                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green/10 text-sm font-bold text-green">
+                            {testimonial.author.charAt(0).toUpperCase()}
+                          </div>
+                        )}
+                        <div>
+                          <p className="font-semibold text-navy">{testimonial.author}</p>
+                          <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                        </div>
+                      </div>
+                      <p className="mt-3 text-xs font-medium text-green">{testimonial.company}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-            {testimonials.length === 0 && (
-              <div className="text-center md:col-span-2 lg:col-span-3">
-                <p className="text-sm text-muted-foreground">No Google reviews are available yet.</p>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Devhulon&query_place_id=ChIJZ-KRlYKzjicRsWjaNPwjL08"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-3 inline-flex text-sm font-semibold text-green underline underline-offset-4 hover:text-navy"
-                >
-                  View Devhulon on Google
-                </a>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">Client testimonials coming soon.</p>
               </div>
             )}
           </div>
+
+
         </div>
+        <style>{`
+          @keyframes review-scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Transition Wave Divider to the Navy Section */}
