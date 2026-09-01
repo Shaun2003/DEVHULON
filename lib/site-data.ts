@@ -15,12 +15,14 @@ export type Testimonial = {
   title: string
   company: string
   rating?: number
+  image?: string
 }
 
 type GoogleReview = {
   rating?: number
   text?: { text?: string }
-  authorAttribution?: { displayName?: string }
+  publishTime?: string
+  authorAttribution?: { displayName?: string; photoUri?: string }
 }
 
 type GooglePlaceResponse = {
@@ -429,9 +431,10 @@ export async function getGoogleTestimonials(): Promise<Testimonial[]> {
       `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?key=${encodeURIComponent(apiKey)}`,
       {
         headers: {
-          'X-Goog-FieldMask': 'reviews.rating,reviews.text,reviews.authorAttribution.displayName',
+          'X-Goog-FieldMask': 'reviews',
+          'Accept-Language': 'en',
         },
-        next: { revalidate: 900 },
+        next: { revalidate: 300 },
       },
     )
 
@@ -448,9 +451,9 @@ export async function getGoogleTestimonials(): Promise<Testimonial[]> {
         rating: review.rating,
       }))
 
-    return reviews
+    return reviews.length > 0 ? reviews : testimonialsData
   } catch {
-    return []
+    return testimonialsData
   }
 }
 
